@@ -1,0 +1,60 @@
+/* main menu screen  */
+.main-screen {
+  background: url("https://i.redd.it/80jykz32log21.png");
+  height: 300px;
+  width: 300px;
+  border-radius: 20px;
+  margin: 22px auto 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  z-index: 10;
+  text-transform: capitalize;
+}
+
+/* active class for active elements */
+.active {
+  background-color: #5f0d0d;
+}
+
+/* icon colors inside screen */
+.icon-color {
+  color: #af2020;
+}
+
+/* list style on main screen */
+.list {
+  display: grid;
+  list-style: none;
+  padding-left: 0px;
+  height: 100%;
+  margin-top: 0;
+}
+
+.list-container {
+  height: 100%;
+  background: #ab2828;
+  border-radius: 10px;
+}
+
+/* list item style */
+.item {
+  padding: 12px;
+  color: white;
+  border-radius: 9px;
+}
+
+/* sub screens styling */
+.sub-main-screen {
+  background: white;
+  height: 300px;
+  width: 300px;
+  border-radius: 20px;
+  margin: 22px auto 20px auto;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 20px;
+}

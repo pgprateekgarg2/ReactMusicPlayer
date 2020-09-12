@@ -1,0 +1,39 @@
+.button-main {
+    background: white;
+    margin: 14px;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.btn {
+    background: none;
+    border: none;
+    z-index: 1;
+}
+
+.center-btn {
+    display: flex;
+    justify-content: space-around;
+}
+
+.overlay {
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    background: transparent;
+    margin-left: auto;
+    display: block;
+    margin-right: auto;
+    margin-left: 10px;
+    margin-left: 0;
+    border-radius: 50%;
+}
+
+.ok-btn {
+    z-index: 1;
+}

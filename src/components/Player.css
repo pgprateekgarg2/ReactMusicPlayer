@@ -1,0 +1,32 @@
+.player-main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.player {
+
+    margin: 31px;
+    height: 657px;
+    width: 342px;
+    background: #503636;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ok-btn {
+    height: 100px;
+    width: 100px;
+    background: #503636;
+    border-radius: 50%;
+    margin-left: 1px;
+
+}
+
+button {
+    border: none;
+    outline: none;
+}
