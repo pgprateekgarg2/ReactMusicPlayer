@@ -34,22 +34,38 @@ class Button extends React.Component {
     const selectCategory = (index) => {
       if (index > this.state.categories.length - 1) {
         index = 0;
-        current = 0;
       }
       // console.log(this.state.categories[index]);
       this.props.changeScreen(this.state.categories[index]);
       this.setState({ current: this.state.categories[index] });
     };
-    let current = 0;
 
     // zingtouch event which return data related to drag
     zt.bind(
       this.wheel.current,
       "rotate",
+      // setting up menu's category
       function (e) {
-        if (Math.round(e.detail.angle) % 50 === 0) {
-          selectCategory(current);
-          current++;
+        if (
+          Math.round(Math.abs(e.detail.distanceFromOrigin)) % 360 > 270 &&
+          Math.round(Math.abs(e.detail.distanceFromOrigin)) % 360 <= 360
+        ) {
+          selectCategory(3);
+        } else if (
+          Math.round(Math.abs(e.detail.distanceFromOrigin)) % 360 > 180 &&
+          Math.round(Math.abs(e.detail.distanceFromOrigin)) % 360 <= 270
+        ) {
+          selectCategory(2);
+        } else if (
+          Math.round(Math.abs(e.detail.distanceFromOrigin)) % 360 > 90 &&
+          Math.round(Math.abs(e.detail.distanceFromOrigin)) % 360 <= 180
+        ) {
+          selectCategory(1);
+        } else if (
+          Math.round(Math.abs(e.detail.distanceFromOrigin)) % 360 > 0 &&
+          Math.round(Math.abs(e.detail.distanceFromOrigin)) % 360 <= 90
+        ) {
+          selectCategory(0);
         }
         currentAngle += e.detail.distanceFromLast;
         setMe(currentAngle);
@@ -62,6 +78,7 @@ class Button extends React.Component {
       <div ref={this.wheel} id="button-main" className="button-main">
         <div ref={this.overlay} className="overlay"></div>
         <div id="button-main" className="button-main">
+          {/*button to go back*/}
           <button
             className="btn"
             onClick={() => {
@@ -74,6 +91,7 @@ class Button extends React.Component {
             <button className="btn">
               <i className="fas fa-fast-backward"></i>
             </button>
+            {/*select category*/}
             <div
               className="ok-btn"
               onClick={() => {

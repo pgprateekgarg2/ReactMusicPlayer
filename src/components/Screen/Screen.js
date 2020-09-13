@@ -12,14 +12,14 @@ class Screen extends React.Component {
   renderCategory() {
     return this.state.categories.map((category, index) => {
       return (
-        <React.Fragment>
+        <React.Fragment key={index}>
           <li
+
             className={` item ${
               this.props.screen.toLowerCase() === category.toLowerCase()
                 ? "active"
                 : ""
             }`}
-            key={index}
           >
             <p>{category} </p>
           </li>
@@ -29,12 +29,16 @@ class Screen extends React.Component {
   }
 
   render() {
+    // props
     const { selectedCategory } = this.props;
     // conditional rendering on the basis of selected screen
     const renderSubCategories = () => {
+      // coverflow
       if (selectedCategory === "coverflow") {
         return <div className="sub-main-screen">Coverflow</div>;
-      } else if (selectedCategory === "music") {
+      }
+      // music player
+      else if (selectedCategory === "music") {
         return (
           <div className="sub-main-screen" style={{ backgroundColor: "black" }}>
             <ReactPlayer
@@ -44,14 +48,18 @@ class Screen extends React.Component {
             />
           </div>
         );
-      } else if (selectedCategory === "games") {
+      }
+      // Games
+      else if (selectedCategory === "games") {
         return (
           <div className="sub-main-screen">
             <i class="fas fa-dice icon-color"></i>
             <p>Games</p>
           </div>
         );
-      } else if (selectedCategory === "settings") {
+      }
+      // Settings
+      else if (selectedCategory === "settings") {
         return (
           <div className="sub-main-screen">
             <i class="fas fa-cogs icon-color"></i>
